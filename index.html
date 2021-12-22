@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="funnyCircle.js"></script>
+</head>
+<body>
+<canvas id="myCanvas" width="1400" height="700" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    for (let i = 1; i < 5 ; i ++)
+    {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let radius = Math.floor(Math.random() * 200);
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        let circle = new FunnyCircle(x, y, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = circle.getRandomColor();
+        ctx.fill();
+    }
+</script>
+</body>
+</html>
